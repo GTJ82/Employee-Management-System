@@ -3,13 +3,13 @@ CREATE DATABASE employeeMgmt_DB;
 
 USE employeeMgmt_DB;
 
-CREATE TABLE department(
+CREATE TABLE departments ( 
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE role(
+CREATE TABLE roles (
   id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(30) NOT NULL,
   salary Decimal (8,2) NOT NULL
@@ -17,7 +17,7 @@ CREATE TABLE role(
   PRIMARY KEY (id)
 );
 
-CREATE TABLE employee(
+CREATE TABLE employees (
   id INT NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
