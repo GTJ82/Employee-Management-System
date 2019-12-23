@@ -15,6 +15,16 @@
 ## Pictures
 
 -Image of deployed site
-![Website Image](assets/images/web_image.png)
 
-[Gif Recording](https://i.gyazo.com/6b654792f6518766029c2783b2fbfe0c.mp4)
+![Website Image](assets/images/image1.png)
+
+![Website Image](assets/images/image2.png)
+
+-Recordings of app running
+
+[Gif Recording](/Users/joshmac/Bootcamp/Employee-Management-System/assets/images/recording.gif)
+
+
+
+
+
