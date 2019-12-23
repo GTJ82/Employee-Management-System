@@ -10,9 +10,11 @@
 
 ## Link
 
-[Employee-Management-System](https://gtj82.github.io/GTJ82.github.io-Day_Planner/)
+[Employee-Management-System]()
 
 ## Pictures
 
 -Image of deployed site
 ![Website Image](assets/images/web_image.png)
+
+[Gif Recording](https://i.gyazo.com/6b654792f6518766029c2783b2fbfe0c.mp4)

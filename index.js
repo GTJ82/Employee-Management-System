@@ -90,6 +90,71 @@ function addDepartment() {
 
 }
 
+function addEmployee() {
+    connection.query("SELECT * FROM roles", function(err, results) {
+      if (err) throw err;
+  
+      inquirer
+        .prompt([
+          {
+            name: "first_name",
+            type: "input",
+            message: "What is the employees first name?"
+          },
+          {
+            name: "last_name",
+            type: "input",
+            message: "What is the employees last name?"
+          },
+          {
+            name: "role",
+            type: "rawlist",
+            message: "What is the role?",
+            choices: function() {
+              var roleList = [];
+              for (var i = 0; i < results.length; i++) {
+                roleList.push({
+                  name: results[i].title,
+                  value: results[i].id
+                });
+              }
+              return roleList;
+            }
+          }
+        ])
+        .then(function(answer) {
+          const newEmployee = {
+            first_name: answer.first_name,
+            last_name: answer.last_name,
+            role_id: answer.role
+          };
+  
+          inquirer
+            .prompt([
+              {
+                name: "confirm",
+                type: "confirm",
+                message: "Does this employee have a manager?"
+              }
+            ])
+            .then(function(manager) {
+              if (manager.confirm === true) {
+                addManager(newEmployee);
+              } else {
+                connection.query(
+                  "INSERT INTO employees SET ?",
+                  newEmployee,
+                  function(err) {
+                    console.log("This employee has been added!");
+                    start();
+                  }
+                );
+              }
+            });
+        });
+    });
+  }
+
 function addRole() {
 
     connection.query("SELECT * FROM departments", function (err, results) {
@@ -157,6 +222,28 @@ function addRole() {
 
 function viewDepartments() {
     connection.query("SELECT * FROM departments", function (err, results) {
+        if (err) throw err;
+        console.log("");
+        
+        console.table(results);
+
+        start();
+    })
+}
+
+function viewEmployees() {
+    connection.query("SELECT * FROM employees", function (err, results) {
+        if (err) throw err;
+        console.log("");
+        
+        console.table(results);
+
+        start();
+    })
+}
+
+function viewRoles() {
+    connection.query("SELECT * FROM roles", function (err, results) {
         if (err) throw err;
         console.log("");
         
