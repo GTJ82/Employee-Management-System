@@ -10,7 +10,7 @@
 
 ## Link
 
-[Employee-Management-System]()
+[Employee-Management-System](https://github.com/GTJ82/Employee-Management-System)
 
 ## Pictures
 
@@ -22,7 +22,7 @@
 
 -Recordings of app running
 
-[Gif Recording](/Users/joshmac/Bootcamp/Employee-Management-System/assets/images/recording.gif)
+[YouTube Link of App working](https://youtu.be/NAehMVU9fXQ)
 
 
 
